@@ -1,0 +1,813 @@
+// colors
+$bg-color: #276c94;
+$line-color: #5185a5;
+$minion-color: #ffd978;
+$mouth-color: #2b3149;
+$google-color: #bec9e5;
+$google-shadow-color: #fec365;
+$google-line-color: #2b334a;
+$google-holder-color: #7e8ca7;
+$google-holder-dark-color: #50617b;
+$eye-shadow-color: #d2d2d2;
+$eye-border-color: #7c8ca6;
+$eye-color: #ffffff;
+$eye-ball-color: #2c324a;
+$shirt-color: #839fd3;
+$button-color: #2d314a;
+$logo-color: #2b314b;
+$glove-color: #2c324a;
+$shirt-shadow-color: #ffb172;
+$pant-color: #677fae;
+$pant-dark-color: #51627c;
+$foot-color: #2c324a;
+$base-color: #2c4a6c;
+
+// mixins
+@mixin center {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+    content: $content;
+    position: $position;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background: $bg-color;
+  overflow: hidden;
+}
+
+.line-container{
+  @include center;
+  top: -5vmin;
+  width: 90vmin;
+  height: 50vmin;
+  transform: rotate(-7deg);
+
+  .line-1{
+    position: absolute;
+    top: 2vmin;
+    left: 6vmin;
+    width: 6vmin;
+    height: 5vmin;
+    background: $line-color;
+    border-radius: 5vmin;
+
+    &:before{
+      @include pseudo;
+      left: 8vmin;
+      width: 58.5vmin;
+      height: 5vmin;
+      background: $line-color;
+      border-radius: 5vmin;
+    }
+
+    &:after{
+      @include pseudo;
+      left: 68vmin;
+      width: 8vmin;
+      height: 5vmin;
+      background: $line-color;
+      border-radius: 5vmin;
+    }
+  }
+
+  .line-2{
+    position: absolute;
+    top: 12vmin;
+    left: 8.5vmin;
+    width: 75vmin;
+    height: 5vmin;
+    background: $line-color;
+    border-radius: 5vmin;
+  }
+
+  .line-3{
+    position: absolute;
+    top: 22vmin;
+    left: 11vmin;
+    width: 6vmin;
+    height: 5vmin;
+    background: $line-color;
+    border-radius: 5vmin;
+
+    &:before{
+      @include pseudo;
+      left: 8vmin;
+      width: 55vmin;
+      height: 5vmin;
+      background: $line-color;
+      border-radius: 5vmin;
+    }
+  }
+
+  .line-4{
+    position: absolute;
+    top: 33vmin;
+    left: 11vmin;
+    width: 55.5vmin;
+    height: 5vmin;
+    background: $line-color;
+    border-radius: 5vmin;
+
+    &:after{
+      @include pseudo;
+      left: 58vmin;
+      width: 11.5vmin;
+      height: 5vmin;
+      background: $line-color;
+      border-radius: 5vmin;
+    }
+  }
+
+  .line-5{
+    position: absolute;
+    top: 43.5vmin;
+    left: 2vmin;
+    width: 7.8vmin;
+    height: 5vmin;
+    background: $line-color;
+    border-radius: 5vmin;
+
+    &:before{
+      @include pseudo;
+      left: 9vmin;
+      width: 67.5vmin;
+      height: 5vmin;
+      background: $line-color;
+      border-radius: 5vmin;
+    }
+
+    &:after{
+      @include pseudo;
+      left: 78vmin;
+      width: 6vmin;
+      height: 5vmin;
+      background: $line-color;
+      border-radius: 5vmin;
+    }
+  }
+}
+
+.upper-body{
+  @include center;
+  z-index: 2;
+  top: -8vmin;
+  width: 40vmin;
+  height: 49.8vmin;
+  background: $minion-color;
+  border-top-left-radius: 20vmin;
+  border-top-right-radius: 20vmin;
+  border-bottom-left-radius: 2vmin;
+  border-bottom-right-radius: 2vmin;
+  overflow: hidden;
+
+  .google-line{
+    @include center;
+    z-index: -1;
+    top: -14.5vmin;
+    width: 41vmin;
+    height: 4.3vmin;
+    background: $google-line-color;
+
+    &:before{
+      @include pseudo;
+      top: 4.25vmin;
+      width: 41vmin;
+      height: 1.3vmin;
+      background: $google-shadow-color;
+    }
+  }
+
+  .eye-abstract{
+    width: 11.3vmin;
+    height: 11.3vmin;
+    border-radius: 50%;
+    background: $eye-shadow-color;
+    border: 1.5vmin solid $eye-border-color;
+    overflow: hidden;
+
+    &:before{
+      @include pseudo;
+      top: 1vmin;
+      width: 11.3vmin;
+      height: 11vmin;
+      background: $eye-color;
+      border-radius: 50%;
+    }
+
+    .eye-ball{
+      @include center;
+      top: -1.5vmin;
+      width: 5.2vmin;
+      height: 5.2vmin;
+      background: $eye-ball-color;
+      border-radius: 50%;
+
+      &:before{
+        @include pseudo;
+        top: -0.8vmin;
+        left: 2.6vmin;
+        width: 3.8vmin;
+        height: 3.7vmin;
+        border-radius: 50%;
+        background: $eye-color;
+      }
+    }
+  }
+
+  .google-holder-left{
+    position: absolute;
+    left: 1.5vmin;
+    top: 14.7vmin;
+    height: 6.3vmin;
+    width: 2vmin;
+    background: $google-holder-color;
+    border-top-left-radius: 1vmin;
+    border-bottom-left-radius: 1vmin;
+
+    &:before{
+      @include pseudo;
+      top: 2.5vmin;
+      width: 3vmin;
+      height: 1.2vmin;
+      background: $google-holder-dark-color;
+    }
+  }
+
+  .google-circle-left{
+    @include center;
+    top: -14.2vmin;
+    left: -16.5vmin;
+    width: 2.5vmin;
+    height: 21.2vmin;
+    background: $google-holder-color;
+    border-radius: 2vmin;
+
+    &:before{
+      @include pseudo;
+      top: 2.9vmin;
+      left: -5.8vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      background: $google-holder-color;
+      border-radius: 2vmin;
+      transform: rotate(-20deg);
+    }
+
+    &:after{
+      @include pseudo;
+      top: 13.3vmin;
+      left: -5.8vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      background: $google-holder-color;
+      border-radius: 2vmin;
+      transform: rotate(20deg);
+    }
+  }
+
+  .google-shadow-left{
+    @include center;
+    z-index: -1;
+    top: -12vmin;
+    left: -17vmin;
+    width: 18.5vmin;
+    height: 18.5vmin;
+    background: $google-shadow-color;
+    border-radius: 50%;
+
+    &:before{
+      @include pseudo;
+      top: 14.7vmin;
+      left: 8.3vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      border-radius: 2vmin;
+      background: $google-shadow-color;
+    }
+
+    &:after{
+      @include pseudo;
+      top: 12vmin;
+      left: 2.3vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      border-radius: 2vmin;
+      background: $google-shadow-color;
+      transform: rotate(15deg);
+    }
+  }
+
+  .google-holder-right{
+    position: absolute;
+    right: 1.5vmin;
+    top: 14.7vmin;
+    height: 6.3vmin;
+    width: 2vmin;
+    background: $google-holder-color;
+    border-top-right-radius: 1vmin;
+    border-bottom-right-radius: 1vmin;
+
+    &:before{
+      @include pseudo;
+      top: 2.5vmin;
+      left: -1vmin;
+      width: 3vmin;
+      height: 1.2vmin;
+      background: $google-holder-dark-color;
+    }
+  }
+
+  .google-circle-right{
+    @include center;
+    top: -14.2vmin;
+    right: -16vmin;
+    width: 2.5vmin;
+    height: 21.2vmin;
+    background: $google-holder-color;
+    border-radius: 2vmin;
+
+    &:before{
+      @include pseudo;
+      top: 3vmin;
+      right: -5.85vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      background: $google-holder-color;
+      border-radius: 2vmin;
+      transform: rotate(20deg);
+    }
+
+    &:after{
+      @include pseudo;
+      top: 13.3vmin;
+      right: -5.8vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      background: $google-holder-color;
+      border-radius: 2vmin;
+      transform: rotate(-20deg);
+    }
+  }
+
+  .google-shadow-right{
+    @include center;
+    z-index: -1;
+    top: -12vmin;
+    right: -17vmin;
+    width: 18.5vmin;
+    height: 18.5vmin;
+    background: $google-shadow-color;
+    border-radius: 50%;
+
+    &:before{
+      @include pseudo;
+      top: 14.7vmin;
+      left: 7.5vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      border-radius: 2vmin;
+      background: $google-shadow-color;
+    }
+
+    &:after{
+      @include pseudo;
+      top: 12.1vmin;
+      right: 2.4vmin;
+      width: 2.5vmin;
+      height: 5vmin;
+      border-radius: 2vmin;
+      background: $google-shadow-color;
+      transform: rotate(-20deg);
+    }
+  }
+
+  .google-left{
+    @include center;
+    top: -14.2vmin;
+    left: -16.7vmin;
+    width: 18.5vmin;
+    height: 18.5vmin;
+    background: $google-color;
+    border-radius: 50%;
+
+    .eye-left{
+      @include center;
+      @extend .eye-abstract;
+    }
+  }
+
+  .google-right{
+    @include center;
+    top: -14.2vmin;
+    right: -16vmin;
+    width: 18.5vmin;
+    height: 18.5vmin;
+    background: $google-color;
+    border-radius: 50%;
+
+    .eye-right{
+      @include center;
+      @extend .eye-abstract;
+    }
+  }
+
+  .mouth{
+    @include center;
+    z-index: -2;
+    top: 7.5vmin;
+    width: 11vmin;
+    height: 6.5vmin;
+    border: 1vmin solid $mouth-color;
+    border-top: none;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+  &:before{
+    @include pseudo;
+    top: 0.25vmin;
+    left: -2vmin;
+    width: 17vmin;
+    height: 5vmin;
+    background: $minion-color;
+  }
+}
+
+  .button-abstract{
+    width: 2.5vmin;
+    height: 2.5vmin;
+    border-radius: 50%;
+    background: $button-color;
+
+    &:before{
+      @include pseudo;
+      top: 0.55vmin;
+      left: 1.2vmin;
+      width: 0.3vmin;
+      height: 1.4vmin;
+      background: $pant-color;
+      border-radius: 1vmin;
+      transform: rotate(45deg);
+    }
+
+    &:after{
+      @include pseudo;
+      top: 0.55vmin;
+      left: 1.1vmin;
+      width: 0.3vmin;
+      height: 1.4vmin;
+      background: $pant-color;
+      border-radius: 1vmin;
+      transform: rotate(-45deg);
+    }
+  }
+
+  .shirt-top-left{
+    @include center;
+    z-index: 3;
+    top: 16.5vmin;
+    left: -31vmin;
+    width: 3.3vmin;
+    height: 16.2vmin;
+    background: $pant-color;
+    transform: rotate(-45deg);
+
+    .button{
+      @include center;
+      top: 12.8vmin;
+      @extend .button-abstract;
+    }
+  }
+
+  .shirt-shadow-left{
+    @include center;
+    top: 19.2vmin;
+    left: -31vmin;
+    width: 3.3vmin;
+    height: 16.2vmin;
+    background: $shirt-shadow-color;
+    transform: rotate(-45deg);
+  }
+
+  .shirt-top-right{
+    @include center;
+    z-index: 3;
+    top: 16.5vmin;
+    left: 31vmin;
+    width: 3.3vmin;
+    height: 16.2vmin;
+    background: $pant-color;
+    transform: rotate(45deg);
+
+    .button{
+      @include center;
+      top: 12.8vmin;
+      @extend .button-abstract;
+    }
+  }
+
+  .shirt-shadow-right{
+    @include center;
+    top: 19.2vmin;
+    left: 31vmin;
+    width: 3.3vmin;
+    height: 16.2vmin;
+    background: $shirt-shadow-color;
+    transform: rotate(45deg);
+
+    &:before{
+      @include pseudo;
+    }
+  }
+
+  .shirt{
+    @include center;
+    top: 36.5vmin;
+    width: 26.7vmin;
+    height: 14vmin;
+    background: $shirt-color;
+
+    &:before{
+      @include pseudo;
+      top: 8.7vmin;
+      left: -10vmin;
+      width: 45vmin;
+      height: 6vmin;
+      background: $shirt-color;
+    }
+
+    .pocket{
+      @include center;
+      top: 1vmin;
+      width: 11vmin;
+      height: 8.5vmin;
+      background: $pant-dark-color;
+      border-top-left-radius: 1vmin;
+      border-top-right-radius: 1vmin;
+      border-bottom-left-radius: 1.5vmin;
+      border-bottom-right-radius: 1.5vmin;
+      overflow: hidden;
+
+      &:before{
+        @include pseudo;
+        left: -0.4vmin;
+        width: 11vmin;
+        height: 8.5vmin;
+        background: $pant-color;
+        border-top-left-radius: 1vmin;
+        border-top-right-radius: 1vmin;
+        border-bottom-left-radius: 1.5vmin;
+        border-bottom-right-radius: 1.5vmin;
+      }
+
+      &:after{
+        @include pseudo;
+        @include center;
+        left: -0.5vmin;
+        top: 0.1vmin;
+        width: 6.4vmin;
+        height: 6.4vmin;
+        background: $logo-color;
+        border-radius: 50%;
+      }
+
+      .logo-1{
+        @include center;
+        z-index: 2;
+        top: 0.1vmin;
+        left: -0.5vmin;
+        width: 4.55vmin;
+        height: 4.55vmin;
+        background: $pant-color;
+        transform: rotate(-45deg);
+
+        &:before{
+          @include pseudo;
+          @include center;
+          top: -0.1vmin;
+          left: -0.1vmin;
+          width: 2.2vmin;
+          height: 2.2vmin;
+          background: $logo-color;
+          border-radius: 50%;
+        }
+      }
+
+      .logo-2{
+        @include center;
+        z-index: 2;
+        top: 0.55vmin;
+        left: 2vmin;
+        width: 2.5vmin;
+        height: 0.45vmin;
+        background: $pant-color;
+        border-top-left-radius: 1vmin;
+        border-bottom-left-radius: 1vmin;
+
+        &:before{
+          @include pseudo;
+          top: -0.3vmin;
+          left: 0.8vmin;
+          width: 2.3vmin;
+          height: 0.3vmin;
+          background: $logo-color;
+        }
+      }
+    }
+  }
+
+  .pant-top-left{
+    @include center;
+    top: 45.2vmin;
+    left: -36.7vmin;
+    width: 10vmin;
+    height: 5.3vmin;
+    background: $pant-dark-color;
+    border-bottom-right-radius: 10vmin;
+
+    &:before{
+      @include pseudo;
+      width: 9vmin;
+      height: 4.5vmin;
+      background: $pant-color;
+      border-bottom-right-radius: 10vmin;
+    }
+  }
+
+  .pant-top-right{
+    @include center;
+    top: 45.2vmin;
+    left: 33.2vmin;
+    width: 10vmin;
+    height: 5.3vmin;
+    background: $pant-dark-color;
+    border-bottom-left-radius: 10vmin;
+
+    &:before{
+      @include pseudo;
+      left: 1vmin;
+      width: 9vmin;
+      height: 4.5vmin;
+      background: $pant-color;
+      border-bottom-left-radius: 10vmin;
+    }
+  }
+}
+
+.hand-left{
+  @include center;
+  top: 21.5vmin;
+  left: -30.8vmin;
+  width: 10vmin;
+  height: 11vmin;
+  border: 3.3vmin solid $minion-color;
+  border-radius: 10vmin;
+  transform: rotate(30deg);
+
+  &:before{
+    @include pseudo;
+    top: 9.8vmin;
+    left: 1.2vmin;
+    width: 6.2vmin;
+    height: 6vmin;
+    background: $glove-color;
+    border-top-left-radius: 1.6vmin;
+    border-bottom-left-radius: 1.6vmin;
+    transform: rotate(10deg);
+  }
+}
+
+.hand-right{
+  @include center;
+  top: 21.5vmin;
+  right: -30.6vmin;
+  width: 10vmin;
+  height: 11vmin;
+  border: 3.3vmin solid $minion-color;
+  border-radius: 10vmin;
+  transform: rotate(30deg);
+
+  &:before{
+    @include pseudo;
+    top: 5.7vmin;
+    right: -4.5vmin;
+    width: 6.6vmin;
+    height: 6vmin;
+    background: $glove-color;
+    border-top-right-radius: 1.6vmin;
+    border-bottom-right-radius: 1.6vmin;
+    transform: rotate(-75deg);
+  }
+}
+
+.lower-body{
+  @include center;
+  z-index: 1;
+  top: 43.7vmin;
+  width: 38vmin;
+  height: 10vmin;
+  background: $shirt-color;
+  border-bottom-left-radius: 15vmin;
+  border-bottom-right-radius: 15vmin;
+}
+
+.pant-left{
+  @include center;
+  top: 43.7vmin;
+  left: -20.5vmin;
+  width: 6vmin;
+  height: 17.5vmin;
+  background: $pant-color;
+  transform: skewX(30deg);
+
+  &:after{
+    @include pseudo;
+    right: -5.4vmin;
+    width: 4vmin;
+    height: 17.5vmin;
+    background: $pant-color;
+    border-bottom-right-radius: 1vmin;
+    transform: skewX(-30deg);
+  }
+}
+
+.pant-center{
+  @include center;
+  top: 52vmin;
+  width: 4vmin;
+  height: 7vmin;
+  background: $pant-color;
+
+  &:before{
+    @include pseudo;
+    top: 5vmin;
+    left: 0.25vmin;
+    width: 3.2vmin;
+    height: 3vmin;
+    background: $bg-color;
+    border-top-left-radius: 2vmin;
+    border-top-right-radius: 2vmin;
+  }
+}
+
+.pant-right{
+  @include center;
+  top: 43.7vmin;
+  right: -20.5vmin;
+  width: 6vmin;
+  height: 17.5vmin;
+  background: $pant-color;
+  transform: skewX(-30deg);
+
+  &:after{
+    @include pseudo;
+    left: -5.8vmin;
+    width: 4vmin;
+    height: 17.5vmin;
+    background: $pant-color;
+    border-bottom-left-radius: 1vmin;
+    transform: skewX(30deg);
+  }
+}
+
+.foot{
+  @include center;
+  z-index: 99;
+  top: 64vmin;
+  left: -13.3vmin;
+  width: 9.3vmin;
+  height: 3vmin;
+  background: $foot-color;
+  border-top-left-radius: 3vmin;
+  border-bottom-right-radius: 1.5vmin;
+
+  &:before{
+    @include pseudo;
+    left: 13.2vmin;
+    width: 9.3vmin;
+    height: 3vmin;
+    background: $foot-color;
+    border-top-right-radius: 3vmin;
+    border-bottom-left-radius: 1.5vmin;
+  }
+}
+
+.base{
+  @include center;
+  top: 68vmin;
+  width: 35vmin;
+  height: 3vmin;
+  background: $base-color;
+  border-radius: 50%;
+}
