@@ -1,5 +1,5 @@
-# PureCSS - Bob The Minion
-Responsive Bob The Minion using HTML and CSS
+# PureCSS - Bob the Minion
+Responsive Bob the Minion using HTML and CSS
 
 [Visit design source](https://www.uplabs.com/posts/bob-minion)
 
