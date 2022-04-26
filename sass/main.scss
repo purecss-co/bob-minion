@@ -70,41 +70,6 @@ body {
     }
   }
 
-  .eye-abstract {
-    width: 14.2vmin;
-    height: 14.2vmin;
-    background: $eye-shadow-color;
-    top: -0.2vmin;
-    border: 1.5vmin solid $eye-border-color;
-    border-radius: 50%;
-    overflow: hidden;
-
-    &::before {
-      width: 11.3vmin;
-      height: 11vmin;
-      background: $eye-color;
-      top: 1vmin;
-      border-radius: 50%;
-    }
-
-    .eye-ball {
-      width: 5.2vmin;
-      height: 5.2vmin;
-      background: $eye-ball-color;
-      top: -1.5vmin;
-      border-radius: 50%;
-
-      &::before {
-        width: 3.8vmin;
-        height: 3.7vmin;
-        background: $eye-color;
-        top: -0.8vmin;
-        left: 2.6vmin;
-        border-radius: 50%;
-      }
-    }
-  }
-
   .google-holder-left {
     height: 6.3vmin;
     width: 2vmin;
@@ -251,6 +216,41 @@ body {
       right: 2.4vmin;
       border-radius: 2vmin;
       transform: rotate(-20deg);
+    }
+  }
+
+  .eye-abstract {
+    width: 14.2vmin;
+    height: 14.2vmin;
+    background: $eye-shadow-color;
+    top: -0.2vmin;
+    border: 1.5vmin solid $eye-border-color;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &::before {
+      width: 11.3vmin;
+      height: 11vmin;
+      background: $eye-color;
+      top: 1vmin;
+      border-radius: 50%;
+    }
+
+    .eye-ball {
+      width: 5.2vmin;
+      height: 5.2vmin;
+      background: $eye-ball-color;
+      top: -1.5vmin;
+      border-radius: 50%;
+
+      &::before {
+        width: 3.8vmin;
+        height: 3.7vmin;
+        background: $eye-color;
+        top: -0.8vmin;
+        left: 2.6vmin;
+        border-radius: 50%;
+      }
     }
   }
 
