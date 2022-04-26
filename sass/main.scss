@@ -20,224 +20,100 @@ $shirt-shadow-color: #ffb172;
 $pant-color: #677fae;
 $pant-dark-color: #51627c;
 $foot-color: #2c324a;
-$base-color: #2c4a6c;
+$shadow-color: #2c4a6c;
 
-// mixins
-@mixin center {
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: $bg-color;
+  overflow: hidden;
+
+  * {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
-}
+    box-sizing: border-box;
 
-@mixin pseudo($position: absolute, $content: "") {
-    content: $content;
-    position: $position;
-}
-
-html, body{
-  width: 100%;
-  height: 100%;
-}
-
-body{
-  background: $bg-color;
-  overflow: hidden;
-}
-
-.line-container{
-  @include center;
-  top: -5vmin;
-  width: 90vmin;
-  height: 50vmin;
-  transform: rotate(-7deg);
-
-  .line-1{
-    position: absolute;
-    top: 2vmin;
-    left: 6vmin;
-    width: 6vmin;
-    height: 5vmin;
-    background: $line-color;
-    border-radius: 5vmin;
-
-    &:before{
-      @include pseudo;
-      left: 8vmin;
-      width: 58.5vmin;
-      height: 5vmin;
-      background: $line-color;
-      border-radius: 5vmin;
-    }
-
-    &:after{
-      @include pseudo;
-      left: 68vmin;
-      width: 8vmin;
-      height: 5vmin;
-      background: $line-color;
-      border-radius: 5vmin;
-    }
-  }
-
-  .line-2{
-    position: absolute;
-    top: 12vmin;
-    left: 8.5vmin;
-    width: 75vmin;
-    height: 5vmin;
-    background: $line-color;
-    border-radius: 5vmin;
-  }
-
-  .line-3{
-    position: absolute;
-    top: 22vmin;
-    left: 11vmin;
-    width: 6vmin;
-    height: 5vmin;
-    background: $line-color;
-    border-radius: 5vmin;
-
-    &:before{
-      @include pseudo;
-      left: 8vmin;
-      width: 55vmin;
-      height: 5vmin;
-      background: $line-color;
-      border-radius: 5vmin;
-    }
-  }
-
-  .line-4{
-    position: absolute;
-    top: 33vmin;
-    left: 11vmin;
-    width: 55.5vmin;
-    height: 5vmin;
-    background: $line-color;
-    border-radius: 5vmin;
-
-    &:after{
-      @include pseudo;
-      left: 58vmin;
-      width: 11.5vmin;
-      height: 5vmin;
-      background: $line-color;
-      border-radius: 5vmin;
-    }
-  }
-
-  .line-5{
-    position: absolute;
-    top: 43.5vmin;
-    left: 2vmin;
-    width: 7.8vmin;
-    height: 5vmin;
-    background: $line-color;
-    border-radius: 5vmin;
-
-    &:before{
-      @include pseudo;
-      left: 9vmin;
-      width: 67.5vmin;
-      height: 5vmin;
-      background: $line-color;
-      border-radius: 5vmin;
-    }
-
-    &:after{
-      @include pseudo;
-      left: 78vmin;
-      width: 6vmin;
-      height: 5vmin;
-      background: $line-color;
-      border-radius: 5vmin;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
     }
   }
 }
 
-.upper-body{
-  @include center;
+.upper-body {
   z-index: 2;
-  top: -8vmin;
   width: 40vmin;
   height: 49.8vmin;
   background: $minion-color;
-  border-top-left-radius: 20vmin;
-  border-top-right-radius: 20vmin;
-  border-bottom-left-radius: 2vmin;
-  border-bottom-right-radius: 2vmin;
+  top: -8vmin;
+  border-radius: 20vmin 20vmin 2vmin 2vmin;
   overflow: hidden;
 
-  .google-line{
-    @include center;
+  .google-line {
     z-index: -1;
-    top: -14.5vmin;
     width: 41vmin;
     height: 4.3vmin;
     background: $google-line-color;
+    top: -14.5vmin;
 
-    &:before{
-      @include pseudo;
-      top: 4.25vmin;
+    &::before {
       width: 41vmin;
       height: 1.3vmin;
       background: $google-shadow-color;
+      top: 4.25vmin;
     }
   }
 
-  .eye-abstract{
-    width: 11.3vmin;
-    height: 11.3vmin;
-    border-radius: 50%;
+  .eye-abstract {
+    width: 14.2vmin;
+    height: 14.2vmin;
     background: $eye-shadow-color;
+    top: -0.2vmin;
     border: 1.5vmin solid $eye-border-color;
+    border-radius: 50%;
     overflow: hidden;
 
-    &:before{
-      @include pseudo;
-      top: 1vmin;
+    &::before {
       width: 11.3vmin;
       height: 11vmin;
       background: $eye-color;
+      top: 1vmin;
       border-radius: 50%;
     }
 
-    .eye-ball{
-      @include center;
-      top: -1.5vmin;
+    .eye-ball {
       width: 5.2vmin;
       height: 5.2vmin;
       background: $eye-ball-color;
+      top: -1.5vmin;
       border-radius: 50%;
 
-      &:before{
-        @include pseudo;
-        top: -0.8vmin;
-        left: 2.6vmin;
+      &::before {
         width: 3.8vmin;
         height: 3.7vmin;
-        border-radius: 50%;
         background: $eye-color;
+        top: -0.8vmin;
+        left: 2.6vmin;
+        border-radius: 50%;
       }
     }
   }
 
-  .google-holder-left{
-    position: absolute;
-    left: 1.5vmin;
-    top: 14.7vmin;
+  .google-holder-left {
     height: 6.3vmin;
     width: 2vmin;
     background: $google-holder-color;
-    border-top-left-radius: 1vmin;
-    border-bottom-left-radius: 1vmin;
+    top: -14.4vmin;
+    left: -35vmin;
+    border-radius: 1vmin 0 0 1vmin;
 
-    &:before{
-      @include pseudo;
+    &::before {
       top: 2.5vmin;
       width: 3vmin;
       height: 1.2vmin;
@@ -245,569 +121,494 @@ body{
     }
   }
 
-  .google-circle-left{
-    @include center;
-    top: -14.2vmin;
-    left: -16.5vmin;
+  .google-circle-left {
     width: 2.5vmin;
     height: 21.2vmin;
     background: $google-holder-color;
+    top: -14.2vmin;
+    left: -16.5vmin;
     border-radius: 2vmin;
 
-    &:before{
-      @include pseudo;
-      top: 2.9vmin;
-      left: -5.8vmin;
+    &::before {
       width: 2.5vmin;
       height: 5vmin;
       background: $google-holder-color;
+      top: 2.9vmin;
+      left: -5.8vmin;
       border-radius: 2vmin;
       transform: rotate(-20deg);
     }
 
-    &:after{
-      @include pseudo;
-      top: 13.3vmin;
-      left: -5.8vmin;
+    &::after {
       width: 2.5vmin;
       height: 5vmin;
       background: $google-holder-color;
+      top: 13.3vmin;
+      left: -5.8vmin;
       border-radius: 2vmin;
       transform: rotate(20deg);
     }
   }
 
-  .google-shadow-left{
-    @include center;
+  .google-shadow-left {
     z-index: -1;
-    top: -12vmin;
-    left: -17vmin;
     width: 18.5vmin;
     height: 18.5vmin;
     background: $google-shadow-color;
+    top: -12vmin;
+    left: -17vmin;
     border-radius: 50%;
 
-    &:before{
-      @include pseudo;
+    &::before {
+      width: 2.5vmin;
+      height: 5vmin;
+      background: $google-shadow-color;
       top: 14.7vmin;
       left: 8.3vmin;
-      width: 2.5vmin;
-      height: 5vmin;
       border-radius: 2vmin;
-      background: $google-shadow-color;
     }
 
-    &:after{
-      @include pseudo;
-      top: 12vmin;
-      left: 2.3vmin;
+    &::after {
       width: 2.5vmin;
       height: 5vmin;
-      border-radius: 2vmin;
       background: $google-shadow-color;
+      top: 12vmin;
+      left: 2.3vmin;
+      border-radius: 2vmin;
       transform: rotate(15deg);
     }
   }
 
-  .google-holder-right{
-    position: absolute;
-    right: 1.5vmin;
-    top: 14.7vmin;
+  .google-holder-right {
     height: 6.3vmin;
     width: 2vmin;
     background: $google-holder-color;
-    border-top-right-radius: 1vmin;
-    border-bottom-right-radius: 1vmin;
+    top: -14.4vmin;
+    left: 35vmin;
+    border-radius: 0 1vmin 1vmin 0;
 
-    &:before{
-      @include pseudo;
-      top: 2.5vmin;
-      left: -1vmin;
+    &::before {
       width: 3vmin;
       height: 1.2vmin;
       background: $google-holder-dark-color;
+      top: 2.5vmin;
+      left: -1vmin;
     }
   }
 
-  .google-circle-right{
-    @include center;
-    top: -14.2vmin;
-    right: -16vmin;
+  .google-circle-right {
     width: 2.5vmin;
     height: 21.2vmin;
     background: $google-holder-color;
+    top: -14.2vmin;
+    right: -16vmin;
     border-radius: 2vmin;
 
-    &:before{
-      @include pseudo;
-      top: 3vmin;
-      right: -5.85vmin;
+    &::before {
       width: 2.5vmin;
       height: 5vmin;
       background: $google-holder-color;
+      top: 3vmin;
+      right: -5.85vmin;
       border-radius: 2vmin;
       transform: rotate(20deg);
     }
 
-    &:after{
-      @include pseudo;
-      top: 13.3vmin;
-      right: -5.8vmin;
+    &::after {
       width: 2.5vmin;
       height: 5vmin;
       background: $google-holder-color;
+      top: 13.3vmin;
+      right: -5.8vmin;
       border-radius: 2vmin;
       transform: rotate(-20deg);
     }
   }
 
-  .google-shadow-right{
-    @include center;
+  .google-shadow-right {
     z-index: -1;
-    top: -12vmin;
-    right: -17vmin;
     width: 18.5vmin;
     height: 18.5vmin;
     background: $google-shadow-color;
+    top: -12vmin;
+    right: -17vmin;
     border-radius: 50%;
 
-    &:before{
-      @include pseudo;
+    &::before {
+      width: 2.5vmin;
+      height: 5vmin;
+      background: $google-shadow-color;
       top: 14.7vmin;
       left: 7.5vmin;
-      width: 2.5vmin;
-      height: 5vmin;
       border-radius: 2vmin;
-      background: $google-shadow-color;
     }
 
-    &:after{
-      @include pseudo;
-      top: 12.1vmin;
-      right: 2.4vmin;
+    &::after {
       width: 2.5vmin;
       height: 5vmin;
-      border-radius: 2vmin;
       background: $google-shadow-color;
+      top: 12.1vmin;
+      right: 2.4vmin;
+      border-radius: 2vmin;
       transform: rotate(-20deg);
     }
   }
 
-  .google-left{
-    @include center;
+  .google-left {
+    width: 18.5vmin;
+    height: 18.5vmin;
+    background: $google-color;
     top: -14.2vmin;
     left: -16.7vmin;
-    width: 18.5vmin;
-    height: 18.5vmin;
-    background: $google-color;
     border-radius: 50%;
 
-    .eye-left{
-      @include center;
+    .eye-left {
       @extend .eye-abstract;
     }
   }
 
-  .google-right{
-    @include center;
+  .google-right {
+    width: 18.5vmin;
+    height: 18.5vmin;
+    background: $google-color;
     top: -14.2vmin;
     right: -16vmin;
-    width: 18.5vmin;
-    height: 18.5vmin;
-    background: $google-color;
     border-radius: 50%;
 
-    .eye-right{
-      @include center;
+    .eye-right {
       @extend .eye-abstract;
     }
   }
 
-  .mouth{
-    @include center;
+  .mouth {
     z-index: -2;
-    top: 7.5vmin;
-    width: 11vmin;
-    height: 6.5vmin;
+    width: 13vmin;
+    height: 7.5vmin;
     border: 1vmin solid $mouth-color;
     border-top: none;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    top: 7.4vmin;
+    border-radius: 0 0 50% 50%;
 
-  &:before{
-    @include pseudo;
-    top: 0.25vmin;
-    left: -2vmin;
-    width: 17vmin;
-    height: 5vmin;
-    background: $minion-color;
+    &::before {
+      width: 17vmin;
+      height: 5vmin;
+      background: $minion-color;
+      top: 0.25vmin;
+      left: -2vmin;
+    }
   }
-}
 
-  .button-abstract{
+  .button-abstract {
     width: 2.5vmin;
     height: 2.5vmin;
-    border-radius: 50%;
     background: $button-color;
+    border-radius: 50%;
 
-    &:before{
-      @include pseudo;
-      top: 0.55vmin;
-      left: 1.2vmin;
+    &::before {
       width: 0.3vmin;
       height: 1.4vmin;
       background: $pant-color;
+      top: 0.55vmin;
+      left: 1.2vmin;
       border-radius: 1vmin;
       transform: rotate(45deg);
     }
 
-    &:after{
-      @include pseudo;
-      top: 0.55vmin;
-      left: 1.1vmin;
+    &::after {
       width: 0.3vmin;
       height: 1.4vmin;
       background: $pant-color;
+      top: 0.55vmin;
+      left: 1.1vmin;
       border-radius: 1vmin;
       transform: rotate(-45deg);
     }
   }
 
-  .shirt-top-left{
-    @include center;
+  .shirt-top-left {
     z-index: 3;
-    top: 16.5vmin;
-    left: -31vmin;
     width: 3.3vmin;
     height: 16.2vmin;
     background: $pant-color;
+    top: 16.5vmin;
+    left: -31vmin;
     transform: rotate(-45deg);
 
-    .button{
-      @include center;
-      top: 12.8vmin;
+    .button {
       @extend .button-abstract;
+      top: 12.8vmin;
     }
   }
 
-  .shirt-shadow-left{
-    @include center;
-    top: 19.2vmin;
-    left: -31vmin;
+  .shirt-shadow-left {
     width: 3.3vmin;
     height: 16.2vmin;
     background: $shirt-shadow-color;
+    top: 19.2vmin;
+    left: -31vmin;
     transform: rotate(-45deg);
   }
 
-  .shirt-top-right{
-    @include center;
+  .shirt-top-right {
     z-index: 3;
-    top: 16.5vmin;
-    left: 31vmin;
     width: 3.3vmin;
     height: 16.2vmin;
     background: $pant-color;
+    top: 16.5vmin;
+    left: 31vmin;
     transform: rotate(45deg);
 
-    .button{
-      @include center;
-      top: 12.8vmin;
+    .button {
       @extend .button-abstract;
+      top: 12.8vmin;
     }
   }
 
-  .shirt-shadow-right{
-    @include center;
-    top: 19.2vmin;
-    left: 31vmin;
+  .shirt-shadow-right {
     width: 3.3vmin;
     height: 16.2vmin;
     background: $shirt-shadow-color;
+    top: 19.2vmin;
+    left: 31vmin;
     transform: rotate(45deg);
-
-    &:before{
-      @include pseudo;
-    }
   }
 
-  .shirt{
-    @include center;
-    top: 36.5vmin;
+  .shirt {
     width: 26.7vmin;
     height: 14vmin;
     background: $shirt-color;
+    top: 36.5vmin;
 
-    &:before{
-      @include pseudo;
-      top: 8.7vmin;
-      left: -10vmin;
+    &::before {
       width: 45vmin;
       height: 6vmin;
       background: $shirt-color;
+      top: 8.7vmin;
+      left: -10vmin;
     }
 
-    .pocket{
-      @include center;
-      top: 1vmin;
+    .pocket {
       width: 11vmin;
       height: 8.5vmin;
       background: $pant-dark-color;
-      border-top-left-radius: 1vmin;
-      border-top-right-radius: 1vmin;
-      border-bottom-left-radius: 1.5vmin;
-      border-bottom-right-radius: 1.5vmin;
+      top: 1vmin;
+      border-radius: 1vmin 1vmin 1.5vmin 1.5vmin;
       overflow: hidden;
 
-      &:before{
-        @include pseudo;
-        left: -0.4vmin;
+      &::before {
         width: 11vmin;
         height: 8.5vmin;
         background: $pant-color;
-        border-top-left-radius: 1vmin;
-        border-top-right-radius: 1vmin;
-        border-bottom-left-radius: 1.5vmin;
-        border-bottom-right-radius: 1.5vmin;
+        left: -0.4vmin;
+        border-radius: 1vmin 1vmin 1.5vmin 1.5vmin;
       }
 
-      &:after{
-        @include pseudo;
-        @include center;
-        left: -0.5vmin;
-        top: 0.1vmin;
+      &::after {
         width: 6.4vmin;
         height: 6.4vmin;
         background: $logo-color;
+        top: 1.1vmin;
+        left: 2.05vmin;
         border-radius: 50%;
       }
 
-      .logo-1{
-        @include center;
+      .logo-1 {
         z-index: 2;
-        top: 0.1vmin;
-        left: -0.5vmin;
         width: 4.55vmin;
         height: 4.55vmin;
         background: $pant-color;
+        top: 0.1vmin;
+        left: -0.5vmin;
         transform: rotate(-45deg);
 
-        &:before{
-          @include pseudo;
-          @include center;
-          top: -0.1vmin;
-          left: -0.1vmin;
+        &::before {
           width: 2.2vmin;
           height: 2.2vmin;
           background: $logo-color;
+          top: 1.15vmin;
+          left: 1.15vmin;
           border-radius: 50%;
         }
       }
 
-      .logo-2{
-        @include center;
+      .logo-2 {
         z-index: 2;
-        top: 0.55vmin;
-        left: 2vmin;
         width: 2.5vmin;
         height: 0.45vmin;
         background: $pant-color;
-        border-top-left-radius: 1vmin;
-        border-bottom-left-radius: 1vmin;
+        top: 0.55vmin;
+        left: 2vmin;
+        border-radius: 1vmin 0 0 1vmin;
 
-        &:before{
-          @include pseudo;
-          top: -0.3vmin;
-          left: 0.8vmin;
+        &::before {
           width: 2.3vmin;
           height: 0.3vmin;
           background: $logo-color;
+          top: -0.3vmin;
+          left: 0.8vmin;
         }
       }
     }
   }
 
-  .pant-top-left{
-    @include center;
-    top: 45.2vmin;
-    left: -36.7vmin;
+  .pant-top-left {
     width: 10vmin;
     height: 5.3vmin;
     background: $pant-dark-color;
-    border-bottom-right-radius: 10vmin;
+    top: 45.2vmin;
+    left: -36.7vmin;
+    border-radius: 0 0 10vmin 0;
 
-    &:before{
-      @include pseudo;
+    &::before {
       width: 9vmin;
       height: 4.5vmin;
       background: $pant-color;
-      border-bottom-right-radius: 10vmin;
+      border-radius: 0 0 10vmin 0;
     }
   }
 
-  .pant-top-right{
-    @include center;
-    top: 45.2vmin;
-    left: 33.2vmin;
+  .pant-top-right {
     width: 10vmin;
     height: 5.3vmin;
     background: $pant-dark-color;
-    border-bottom-left-radius: 10vmin;
+    top: 45.2vmin;
+    left: 33.2vmin;
+    border-radius: 0 0 0 10vmin;
 
-    &:before{
-      @include pseudo;
-      left: 1vmin;
+    &::before {
       width: 9vmin;
       height: 4.5vmin;
       background: $pant-color;
-      border-bottom-left-radius: 10vmin;
+      left: 1vmin;
+      border-radius: 0 0 0 10vmin;
     }
   }
 }
 
-.hand-left{
-  @include center;
-  top: 21.5vmin;
-  left: -30.8vmin;
-  width: 10vmin;
-  height: 11vmin;
+.hand-left {
+  width: 14.9vmin;
+  height: 16.7vmin;
   border: 3.3vmin solid $minion-color;
+  top: 20.8vmin;
+  left: -32.2vmin;
   border-radius: 10vmin;
   transform: rotate(30deg);
 
-  &:before{
-    @include pseudo;
-    top: 9.8vmin;
-    left: 1.2vmin;
+  &::before {
     width: 6.2vmin;
     height: 6vmin;
     background: $glove-color;
-    border-top-left-radius: 1.6vmin;
-    border-bottom-left-radius: 1.6vmin;
+    top: 9.3vmin;
+    left: 1.1vmin;
+    border-radius: 1.6vmin 0 0 1.6vmin;
     transform: rotate(10deg);
   }
 }
 
-.hand-right{
-  @include center;
-  top: 21.5vmin;
-  right: -30.6vmin;
-  width: 10vmin;
-  height: 11vmin;
+.hand-right {
+  width: 15.1vmin;
+  height: 16.7vmin;
   border: 3.3vmin solid $minion-color;
+  top: 21.5vmin;
+  right: -32vmin;
   border-radius: 10vmin;
   transform: rotate(30deg);
 
-  &:before{
-    @include pseudo;
-    top: 5.7vmin;
-    right: -4.5vmin;
+  &::before {
     width: 6.6vmin;
     height: 6vmin;
     background: $glove-color;
-    border-top-right-radius: 1.6vmin;
-    border-bottom-right-radius: 1.6vmin;
+    top: 5.6vmin;
+    right: -4.6vmin;
+    border-radius: 0 1.6vmin 1.6vmin 0;
     transform: rotate(-75deg);
   }
 }
 
-.lower-body{
-  @include center;
+.lower-body {
   z-index: 1;
-  top: 43.7vmin;
   width: 38vmin;
   height: 10vmin;
   background: $shirt-color;
-  border-bottom-left-radius: 15vmin;
-  border-bottom-right-radius: 15vmin;
+  top: 43.7vmin;
+  border-radius: 0 0 15vmin 15vmin;
 }
 
-.pant-left{
-  @include center;
-  top: 43.7vmin;
-  left: -20.5vmin;
+.pant-left {
   width: 6vmin;
   height: 17.5vmin;
   background: $pant-color;
+  top: 43.7vmin;
+  left: -20.5vmin;
   transform: skewX(30deg);
 
-  &:after{
-    @include pseudo;
-    right: -5.4vmin;
+  &::after {
     width: 4vmin;
     height: 17.5vmin;
     background: $pant-color;
-    border-bottom-right-radius: 1vmin;
+    right: -5.5vmin;
+    border-radius: 0 0 1vmin 0;
     transform: skewX(-30deg);
   }
 }
 
-.pant-center{
-  @include center;
-  top: 52vmin;
+.pant-center {
   width: 4vmin;
   height: 7vmin;
   background: $pant-color;
+  top: 52vmin;
 
-  &:before{
-    @include pseudo;
-    top: 5vmin;
-    left: 0.25vmin;
+  &::before {
     width: 3.2vmin;
     height: 3vmin;
     background: $bg-color;
-    border-top-left-radius: 2vmin;
-    border-top-right-radius: 2vmin;
+    top: 5vmin;
+    left: 0.25vmin;
+    border-radius: 2vmin 2vmin 0 0;
   }
 }
 
-.pant-right{
-  @include center;
-  top: 43.7vmin;
-  right: -20.5vmin;
+.pant-right {
   width: 6vmin;
   height: 17.5vmin;
   background: $pant-color;
+  top: 43.7vmin;
+  right: -20.5vmin;
   transform: skewX(-30deg);
 
-  &:after{
-    @include pseudo;
-    left: -5.8vmin;
+  &::after {
     width: 4vmin;
     height: 17.5vmin;
     background: $pant-color;
-    border-bottom-left-radius: 1vmin;
+    left: -5.8vmin;
+    border-radius: 0 0 0 1vmin;
     transform: skewX(30deg);
   }
 }
 
-.foot{
-  @include center;
-  z-index: 99;
-  top: 64vmin;
-  left: -13.3vmin;
+.foot {
+  z-index: 1;
   width: 9.3vmin;
   height: 3vmin;
   background: $foot-color;
-  border-top-left-radius: 3vmin;
-  border-bottom-right-radius: 1.5vmin;
+  top: 64vmin;
+  left: -13.3vmin;
+  border-radius: 3vmin 0 1.5vmin 0;
 
-  &:before{
-    @include pseudo;
-    left: 13.2vmin;
+  &::before {
     width: 9.3vmin;
     height: 3vmin;
     background: $foot-color;
+    left: 13.2vmin;
     border-top-right-radius: 3vmin;
-    border-bottom-left-radius: 1.5vmin;
+    border-radius: 0 3vmin 0 1.5vmin;
   }
 }
 
-.base{
-  @include center;
-  top: 68vmin;
+.shadow {
   width: 35vmin;
   height: 3vmin;
-  background: $base-color;
+  background: $shadow-color;
+  top: 68vmin;
   border-radius: 50%;
 }
